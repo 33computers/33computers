@@ -5,7 +5,6 @@ html<!DOCTYPE html>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>33 COMPUTERS | Համակարգիչների և Հեռախոսների Վերանորոգում</title>
     <style>
-        /* Ընդհանուր ոճեր էջի համար */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
@@ -13,8 +12,6 @@ html<!DOCTYPE html>
             background-color: #f4f7f6;
             color: #333;
         }
-
-        /* Գլխամաս (Header) */
         header {
             background-color: #1a252f;
             color: white;
@@ -23,7 +20,6 @@ html<!DOCTYPE html>
             justify-content: space-between;
             align-items: center;
         }
-
         header h1 {
             margin: 0;
             font-size: 24px;
@@ -31,38 +27,31 @@ html<!DOCTYPE html>
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-
         nav a {
             color: white;
             text-decoration: none;
             margin-left: 20px;
             font-weight: bold;
         }
-
         nav a:hover {
             color: #3498db;
         }
-
-        /* Գլխավոր բաներ (Hero Section) */
         .hero {
             background: linear-gradient(135deg, #2c3e50, #1a252f);
             color: white;
             padding: 80px 20px;
             text-align: center;
         }
-
         .hero h2 {
             font-size: 36px;
             margin-bottom: 20px;
         }
-
         .hero p {
             font-size: 18px;
             color: #bdc3c7;
             max-width: 600px;
             margin: 0 auto 30px auto;
         }
-
         .hero a.btn-call {
             display: inline-block;
             background-color: #e74c3c;
@@ -75,27 +64,22 @@ html<!DOCTYPE html>
             cursor: pointer;
             transition: 0.3s;
         }
-
         .hero a.btn-call:hover {
             background-color: #c0392b;
             transform: scale(1.05);
         }
-
-        /* Ծառայությունների բաժին */
         .services-container {
             max-width: 1200px;
             margin: 50px auto;
             padding: 0 20px;
             text-align: center;
         }
-
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 25px;
             margin-top: 40px;
         }
-
         .service-card {
             background-color: white;
             padding: 30px;
@@ -106,17 +90,14 @@ html<!DOCTYPE html>
             flex-direction: column;
             justify-content: space-between;
         }
-
         .service-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 15px rgba(0,0,0,0.15);
         }
-
         .service-card h3 {
             color: #2c3e50;
             margin-top: 0;
         }
-
         .price-box {
             margin-top: 15px;
             display: flex;
@@ -124,7 +105,6 @@ html<!DOCTYPE html>
             gap: 5px;
             align-items: center;
         }
-
         .price-tag {
             display: inline-block;
             font-weight: bold;
@@ -135,30 +115,24 @@ html<!DOCTYPE html>
             border-radius: 4px;
             width: fit-content;
         }
-
-        /* Կոնտակտներ */
         .contacts {
             background-color: #1a252f;
             color: white;
             padding: 50px 20px;
             text-align: center;
         }
-
         .contacts h2 {
             color: #3498db;
             margin-bottom: 25px;
         }
-
         .contacts p {
             font-size: 18px;
             margin: 12px 0;
         }
-
         .contacts a {
             color: #3498db;
             text-decoration: none;
         }
-
         .btn-map {
             display: inline-block;
             margin-top: 15px;
@@ -169,7 +143,6 @@ html<!DOCTYPE html>
             font-weight: bold;
             transition: 0.3s;
         }
-
         .btn-map:hover {
             background-color: #219653;
         }
@@ -177,7 +150,6 @@ html<!DOCTYPE html>
 </head>
 <body>
 
-    <!-- Գլխամաս -->
     <header>
         <h1>33 COMPUTERS</h1>
         <nav>
@@ -186,14 +158,12 @@ html<!DOCTYPE html>
         </nav>
     </header>
 
-    <!-- Գլխավոր Բաներ -->
     <section class="hero">
         <h2>Համակարգչային տեխնիկայի և հեռախոսների սպասարկման կենտրոն</h2>
         <p>Արագ, որակյալ և մատչելի ծառայություններ ձեր բիզնեսի և տան համար:</p>
         <a href="tel:+37498420050" class="btn-call">Զանգահարել հիմա</a>
     </section>
 
-    <!-- Ծառայություններ -->
     <section id="services" class="services-container">
         <h2>Մեր Ծառայությունները</h2>
         
@@ -201,14 +171,14 @@ html<!DOCTYPE html>
             <div class="service-card">
                 <div>
                     <h3>Համակարգիչների վերանորոգում</h3>
-                    <p>Օպերացիոն համակարգերի (ՕՀ) տեղադրում, ծրագրային սպասարկում, մասերի փոխարինում և հզորացում:</p>
+                    <p>Ծրագրային սպասարկում, մասերի փոխարինում և հզորացում:</p>
                 </div>
             </div>
 
             <div class="service-card">
                 <div>
                     <h3>Հեռախոսների սպասարկում</h3>
-                    <p>Հեռախոսների ծրագրային ապահովման թարմացում, անսարքությունների վերացում:</p>
+                    <p>Հեռախոսների ծրագրային ապահովման թարմացում:</p>
                 </div>
             </div>
 
@@ -235,7 +205,6 @@ html<!DOCTYPE html>
         </div>
     </section>
 
-    <!-- Կոնտակտներ -->
     <section id="contacts" class="contacts">
         <h2>Կապ Մեզ հետ</h2>
         <p>📞 Հեռախոս: <a href="tel:+37498420050">098 42 00 50</a></p>
