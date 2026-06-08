@@ -102,6 +102,9 @@ html<!DOCTYPE html>
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .service-card:hover {
@@ -112,6 +115,18 @@ html<!DOCTYPE html>
         .service-card h3 {
             color: #2c3e50;
             margin-top: 0;
+        }
+
+        .price-tag {
+            display: inline-block;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #27ae60;
+            font-size: 18px;
+            background-color: #e8f8f0;
+            padding: 5px 10px;
+            border-radius: 4px;
+            align-self: center;
         }
 
         /* Կոնտակտներ */
@@ -177,23 +192,32 @@ html<!DOCTYPE html>
         
         <div class="services-grid">
             <div class="service-card">
-                <h3>Համակարգիչների վերանորոգում</h3>
-                <p>Ծրագրային սպասարկում, օպերացիոն համակարգերի տեղադրում, մասերի փոխարինում և հզորացում:</p>
+                <div>
+                    <h3>Համակարգիչների վերանորոգում</h3>
+                    <p>Ծրագրային սպասարկում, օպերացիոն համակարգերի տեղադրում, մասերի փոխարինում և հզորացում:</p>
+                </div>
             </div>
 
             <div class="service-card">
-                <h3>Հեռախոսների սպասարկում</h3>
-                <p>Հեռախոսների ծրագրային ապահովման թարմացում, անսարքությունների վերացում:</p>
+                <div>
+                    <h3>Հեռախոսների սպասարկում</h3>
+                    <p>Հեռախոսների ծրագրային ապահովման թարմացում, անսարքությունների վերացում:</p>
+                </div>
             </div>
 
             <div class="service-card">
-                <h3>Տպիչներ և Քարթրիջներ</h3>
-                <p>Քարթրիջների արագ լիցքավորում և տպիչների պրոֆեսիոնալ վերանորոգում:</p>
+                <div>
+                    <h3>Տպիչներ և Քարթրիջներ</h3>
+                    <p>Քարթրիջների արագ լիցքավորում և տպիչների պրոֆեսիոնալ վերանորոգում:</p>
+                </div>
+                <span class="price-tag">Լիցքավորումը՝ 3000 դրամ</span>
             </div>
 
             <div class="service-card">
-                <h3>Տպագրություն</h3>
-                <p>Բարձրորակ գունավոր տպագրություն, պատճենահանում և սկանավորում:</p>
+                <div>
+                    <h3>Տպագրություն</h3>
+                    <p>Բարձրորակ գունավոր տպագրություն, պատճենահանում և սկանավորում:</p>
+                </div>
             </div>
         </div>
     </section>
