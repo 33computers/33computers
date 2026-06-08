@@ -117,16 +117,23 @@ html<!DOCTYPE html>
             margin-top: 0;
         }
 
+        .price-box {
+            margin-top: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            align-items: center;
+        }
+
         .price-tag {
             display: inline-block;
-            margin-top: 15px;
             font-weight: bold;
             color: #27ae60;
-            font-size: 18px;
+            font-size: 16px;
             background-color: #e8f8f0;
             padding: 5px 10px;
             border-radius: 4px;
-            align-self: center;
+            width: fit-content;
         }
 
         /* Կոնտակտներ */
@@ -194,7 +201,7 @@ html<!DOCTYPE html>
             <div class="service-card">
                 <div>
                     <h3>Համակարգիչների վերանորոգում</h3>
-                    <p>Ծրագրային սպասարկում, օպերացիոն համակարգերի տեղադրում, մասերի փոխարինում և հզորացում:</p>
+                    <p>Օպերացիոն համակարգերի (ՕՀ) տեղադրում, ծրագրային սպասարկում, մասերի փոխարինում և հզորացում:</p>
                 </div>
             </div>
 
@@ -210,13 +217,19 @@ html<!DOCTYPE html>
                     <h3>Տպիչներ և Քարթրիջներ</h3>
                     <p>Քարթրիջների արագ լիցքավորում և տպիչների պրոֆեսիոնալ վերանորոգում:</p>
                 </div>
-                <span class="price-tag">Լիցքավորումը՝ 3000 դրամ</span>
+                <div class="price-box">
+                    <span class="price-tag">Լիցքավորումը՝ 3000 դրամ</span>
+                </div>
             </div>
 
             <div class="service-card">
                 <div>
                     <h3>Տպագրություն</h3>
                     <p>Բարձրորակ գունավոր տպագրություն, պատճենահանում և սկանավորում:</p>
+                </div>
+                <div class="price-box">
+                    <span class="price-tag">Պատճենահանում՝ 25 դրամ</span>
+                    <span class="price-tag">Նկար (10x15)՝ 100 դրամ</span>
                 </div>
             </div>
         </div>
