@@ -7,31 +7,37 @@ html<!DOCTYPE html>
     <style>
         body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; background-color: #f4f7f6; color: #333; }
         header { background-color: #1a252f; color: white; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; }
-        header h1 { margin: 0; font-size: 24px; color: #3498db; text-transform: uppercase; }
+        header h1 { margin: 0; font-size: 24px; color: #3498db; text-transform: uppercase; letter-spacing: 1px; }
         nav a { color: white; text-decoration: none; margin-left: 20px; font-weight: bold; }
-        .hero { background: linear-gradient(135deg, #2c3e50, #1a252f); color: white; padding: 60px 20px; text-align: center; }
+        nav a:hover { color: #3498db; }
+        .hero { background: linear-gradient(135deg, #2c3e50, #1a252f); color: white; padding: 70px 20px; text-align: center; }
         .hero h2 { font-size: 36px; margin-bottom: 20px; }
         .hero p { font-size: 18px; color: #bdc3c7; max-width: 600px; margin: 0 auto 30px auto; }
-        .hero a.btn-call { display: inline-block; background-color: #e74c3c; color: white; text-decoration: none; padding: 15px 30px; font-size: 18px; font-weight: bold; border-radius: 5px; margin-top: 20px; }
-        
-        /* Պարզ նկարի բաժին */
-        .image-banner { max-width: 800px; margin: 30px auto; padding: 0 20px; text-align: center; }
-        .image-banner img { width: 100%; max-height: 350px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
-
+        .hero a.btn-call { display: inline-block; background-color: #e74c3c; color: white; text-decoration: none; padding: 15px 30px; font-size: 18px; font-weight: bold; border-radius: 5px; transition: 0.3s; }
+        .hero a.btn-call:hover { background-color: #c0392b; transform: scale(1.05); }
         .services-container { max-width: 1200px; margin: 50px auto; padding: 0 20px; text-align: center; }
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin-top: 40px; }
-        .service-card { background-color: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); display: flex; flex-direction: column; justify-content: space-between; }
+        .service-card { background-color: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); display: flex; flex-direction: column; justify-content: space-between; transition: 0.3s; }
+        .service-card:hover { transform: translateY(-5px); box-shadow: 0 8px 15px rgba(0,0,0,0.15); }
+        .service-card h3 { color: #2c3e50; margin-top: 0; }
         .price-box { margin-top: 15px; display: flex; flex-direction: column; gap: 5px; align-items: center; }
-        .price-tag { display: inline-block; font-weight: bold; color: #27ae60; font-size: 16px; background-color: #e8f8f0; padding: 5px 10px; border-radius: 4px; }
+        .price-tag { display: inline-block; font-weight: bold; color: #27ae60; font-size: 16px; background-color: #e8f8f0; padding: 5px 10px; border-radius: 4px; width: fit-content; }
         .contacts { background-color: #1a252f; color: white; padding: 50px 20px; text-align: center; }
-        .btn-map { display: inline-block; margin-top: 15px; background-color: #27ae60; color: white !important; padding: 10px 20px; border-radius: 4px; text-decoration: none; font-weight: bold; }
+        .contacts h2 { color: #3498db; margin-bottom: 25px; }
+        .contacts p { font-size: 18px; margin: 12px 0; }
+        .contacts a { color: #3498db; text-decoration: none; }
+        .btn-map { display: inline-block; margin-top: 15px; background-color: #27ae60; color: white !important; padding: 10px 20px; border-radius: 4px; text-decoration: none; font-weight: bold; transition: 0.3s; }
+        .btn-map:hover { background-color: #219653; }
     </style>
 </head>
 <body>
 
     <header>
         <h1>33 COMPUTERS</h1>
-        <nav><a href="#services">Ծառայություններ</a> <a href="#contacts">Կապ</a></nav>
+        <nav>
+            <a href="#services">Ծառայություններ</a>
+            <a href="#contacts">Կապ</a>
+        </nav>
     </header>
 
     <section class="hero">
@@ -40,30 +46,39 @@ html<!DOCTYPE html>
         <a href="tel:+37498420050" class="btn-call">Զանգահարել հիմա</a>
     </section>
 
-    <!-- 100% Աշխատող կայուն տեխնիկական նկար -->
-    <div class="image-banner">
-        <img src="https://wikimedia.org" alt="Computer Repair">
-    </div>
-
     <section id="services" class="services-container">
         <h2>Մեր Ծառայությունները</h2>
+        
         <div class="services-grid">
             <div class="service-card">
-                <h3>Համակարգիչների վերանորոգում</h3>
-                <p>Ծրագրային սպասարկում, մասերի փոխարինում և հզորացում:</p>
+                <div>
+                    <h3>Համակարգիչների վերանորոգում</h3>
+                    <p>Ծրագրային սպասարկում, մասերի փոխարինում և հզորացում:</p>
+                </div>
             </div>
+
             <div class="service-card">
-                <h3>Հեռախոսների սպասարկում</h3>
-                <p>Հեռախոսների ծրագրային ապահովման թարմացում:</p>
+                <div>
+                    <h3>Հեռախոսների սպասարկում</h3>
+                    <p>Հեռախոսների ծրագրային ապահովման թարմացում:</p>
+                </div>
             </div>
+
             <div class="service-card">
-                <h3>Տպիչներ և Քարթրիջներ</h3>
-                <p>Քարթրիջների արագ լիցքավորում և տպիչների պրոֆեսիոնալ վերանորոգում:</p>
-                <div class="price-box"><span class="price-tag">Լիցքավորումը՝ 3000 դրամ</span></div>
+                <div>
+                    <h3>Տպիչներ և Քարթրիջներ</h3>
+                    <p>Քարթրիջների արագ լիցքավորում և տպիչների պրոֆեսիոնալ վերանորոգում:</p>
+                </div>
+                <div class="price-box">
+                    <span class="price-tag">Լիցքավորումը՝ 3000 դրամ</span>
+                </div>
             </div>
+
             <div class="service-card">
-                <h3>Տպագրություն</h3>
-                <p>Բարձրորակ գունավոր տպագրություն, պատճենահանում և սկանավորում:</p>
+                <div>
+                    <h3>Տպագրություն</h3>
+                    <p>Բարձրորակ գունավոր տպագրություն, պատճենահանում և սկանավորում:</p>
+                </div>
                 <div class="price-box">
                     <span class="price-tag">Պատճենահանում՝ 25 դրամ</span>
                     <span class="price-tag">Նկար (10x15)՝ 100 դրամ</span>
@@ -74,7 +89,7 @@ html<!DOCTYPE html>
 
     <section id="contacts" class="contacts">
         <h2>Կապ Մեզ հետ</h2>
-        <p>📞 Հեռախոս: <a href="tel:+37498420050" style="color: #3498db; text-decoration: none;">098 42 00 50</a></p>
+        <p>📞 Հեռախոս: <a href="tel:+37498420050">098 42 00 50</a></p>
         <p>📍 Հասցե: ք. Վարդենիս, Ռոմանի փողոց</p>
         <p>🕒 Աշխատանքային ժամեր: Ամեն օր՝ 09:00 - 19:00</p>
         <a href="https://2gis.am" target="_blank" class="btn-map">🗺️ Անցնել 2GIS Քարտեզին</a>
