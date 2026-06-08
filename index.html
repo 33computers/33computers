@@ -69,7 +69,7 @@ html<!DOCTYPE html>
             transform: scale(1.05);
         }
 
-        /* Փոխվող նկարների բաժին (Slider) */
+        /* Slider */
         .slider-container {
             max-width: 800px;
             position: relative;
@@ -78,6 +78,7 @@ html<!DOCTYPE html>
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
             height: 400px;
+            background-color: #ddd;
         }
         .slide {
             display: none;
@@ -101,6 +102,7 @@ html<!DOCTYPE html>
             cursor: pointer;
             border-radius: 5px;
             transition: 0.3s;
+            z-index: 10;
         }
         .slider-btn:hover {
             background-color: rgba(0,0,0,0.8);
@@ -204,16 +206,15 @@ html<!DOCTYPE html>
         <a href="tel:+37498420050" class="btn-call">Զանգահարել հիմա</a>
     </section>
 
-    <!-- Փոխվող նկարների բաժին -->
     <div class="slider-container">
         <div class="slide">
-            <img src="https://unsplash.com" alt="Համակարգիչների վերանորոգում">
+            <img src="https://picsum.photos" alt="Համակարգիչների վերանորոգում">
         </div>
         <div class="slide">
-            <img src="https://unsplash.com" alt="Տպիչների սպասարկում">
+            <img src="https://picsum.photos" alt="Տպիչների սպասարկում">
         </div>
         <div class="slide">
-            <img src="https://unsplash.com" alt="Հեռախոսների նորոգում">
+            <img src="https://picsum.photos" alt="Հեռախոսների նորոգում">
         </div>
 
         <button class="slider-btn prev" onclick="changeSlide(-1)">&#10094;</button>
@@ -269,33 +270,36 @@ html<!DOCTYPE html>
         <a href="https://2gis.am" target="_blank" class="btn-map">🗺️ Անցնել 2GIS Քարտեզին</a>
     </section>
 
-    <!-- JavaScript նկարների ավտոմատ փոփոխության համար -->
     <script>
         let slideIndex = 0;
-        showSlides();
+        let slides = document.getElementsByClassName("slide");
+        if(slides.length > 0) {
+            slides[0].style.display = "block";
+            setTimeout(showSlides, 4000);
+        }
 
         function changeSlide(n) {
             slideIndex += n;
-            let slides = document.getElementsByClassName("slide");
-            if (slideIndex >= slides.length) { slideIndex = 0; }
-            if (slideIndex < 0) { slideIndex = slides.length - 1; }
             displaySlides();
         }
 
         function showSlides() {
             slideIndex++;
             displaySlides();
-            setTimeout(showSlides, 4000); // Նկարները կփոխվեն ամեն 4 վայրկյանը մեկ
+            setTimeout(showSlides, 4000);
         }
 
         function displaySlides() {
+            let i;
             let slides = document.getElementsByClassName("slide");
             if (slideIndex >= slides.length) { slideIndex = 0; }
             if (slideIndex < 0) { slideIndex = slides.length - 1; }
-            for (let i = 0; i < slides.length; i++) {
+            for (i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";  
             }
-            slides[slideIndex].style.display = "block";  
+            if(slides[slideIndex]) {
+                slides[slideIndex].style.display = "block";  
+            }
         }
     </script>
 
