@@ -14,12 +14,9 @@ html<!DOCTYPE html>
         .hero p { font-size: 18px; color: #bdc3c7; max-width: 600px; margin: 0 auto 30px auto; }
         .hero a.btn-call { display: inline-block; background-color: #e74c3c; color: white; text-decoration: none; padding: 15px 30px; font-size: 18px; font-weight: bold; border-radius: 5px; margin-top: 20px; }
         
-        /* Slider Section */
-        .slider-container { max-width: 800px; position: relative; margin: 40px auto 0 auto; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.2); height: 400px; background-color: #1a252f; }
-        .slide { display: none; width: 100%; height: 100%; }
-        .slide img { width: 100%; height: 100%; object-fit: cover; }
-        .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background-color: rgba(0,0,0,0.5); color: white; border: none; padding: 15px; font-size: 20px; cursor: pointer; z-index: 10; }
-        .prev { left: 10px; } .next { right: 10px; }
+        /* Պարզ նկարների բաժին՝ առանց ծրագրավորման */
+        .image-banner { max-width: 800px; margin: 30px auto; padding: 0 20px; }
+        .image-banner img { width: 100%; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
 
         .services-container { max-width: 1200px; margin: 50px auto; padding: 0 20px; text-align: center; }
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin-top: 40px; }
@@ -43,23 +40,9 @@ html<!DOCTYPE html>
         <a href="tel:+37498420050" class="btn-call">Զանգահարել հիմա</a>
     </section>
 
-    <!-- Slider ներկառուցված տեխնոլոգիական պատկերներով -->
-    <div class="slider-container">
-        <!-- Նկար 1. Համակարգչային տախտակ (Base64) -->
-        <div class="slide" style="display: block;">
-            <img src="data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='800' height='400' viewBox='0 0 800 400'><rect width='100%' height='100%' fill='%232c3e50'/><circle cx='400' cy='200' r='120' fill='%2334495e'/><path d='M250,200 L550,200 M400,50 L400,350' stroke='%233498db' stroke-width='4' stroke-dasharray='10,10'/><text x='50%23' y='50%23' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='32' fill='%23fff'>33 COMPUTERS</text><text x='50%23' y='60%23' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='18' fill='%233498db'>Hardware & Software Service</text></svg>" alt="Համակարգիչների վերանորոգում">
-        </div>
-        <!-- Նկար 2. Տպիչների սպասարկում (Base64) -->
-        <div class="slide">
-            <img src="data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='800' height='400' viewBox='0 0 800 400'><rect width='100%' height='100%' fill='%231a252f'/><path d='M300,150 L500,150 L500,280 L300,280 Z' fill='%232c3e50' stroke='%2327ae60' stroke-width='6'/><rect x='340' y='100' width='120' height='50' fill='%23bdc3c7'/><rect x='340' y='240' width='120' height='60' fill='%23fff'/><text x='50%23' y='50%23' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='24' fill='%2327ae60'>PRINTER SERVICE</text></svg>" alt="Տպիչների սպասարկում">
-        </div>
-        <!-- Նկար 3. Հեռախոսների սպասարկում (Base64) -->
-        <div class="slide">
-            <img src="data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='800' height='400' viewBox='0 0 800 400'><rect width='100%' height='100%' fill='%232c3e50'/><rect x='330' y='60' width='140' height='280' rx='15' fill='%23111' stroke='%23e74c3c' stroke-width='4'/><circle cx='400' cy='310' r='10' fill='%23fff'/><text x='50%23' y='45%23' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='22' fill='%23e74c3c'>SMARTPHONE</text></svg>" alt="Հեռախոսների նորոգում">
-        </div>
-
-        <button class="slider-btn prev" onclick="changeSlide(-1)">&#10094;</button>
-        <button class="slider-btn next" onclick="changeSlide(1)">&#10095;</button>
+    <!-- Մեկ ընդհանուր գեղեցիկ տեխնոլոգիական նկար -->
+    <div class="image-banner">
+        <img src="https://unsplash.com" alt="Tech Service">
     </div>
 
     <section id="services" class="services-container">
@@ -97,33 +80,5 @@ html<!DOCTYPE html>
         <a href="https://2gis.am" target="_blank" class="btn-map">🗺️ Անցնել 2GIS Քարտեզին</a>
     </section>
 
-    <script>
-        let slideIndex = 0;
-        let slides = document.getElementsByClassName("slide");
-        
-        function changeSlide(n) {
-            slideIndex += n;
-            displaySlides();
-        }
-
-        function autoSlides() {
-            slideIndex++;
-            displaySlides();
-            setTimeout(autoSlides, 4000);
-        }
-
-        function displaySlides() {
-            let i;
-            let slides = document.getElementsByClassName("slide");
-            if (slideIndex >= slides.length) { slideIndex = 0; }
-            if (slideIndex < 0) { slideIndex = slides.length - 1; }
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slides[slideIndex].style.display = "block";
-        }
-        
-        setTimeout(autoSlides, 4000);
-    </script>
 </body>
 </html>
