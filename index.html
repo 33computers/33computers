@@ -1,4 +1,4 @@
-html<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="hy">
 <head>
     <meta charset="UTF-8">
@@ -43,11 +43,11 @@ html<!DOCTYPE html>
         <a href="tel:+37498420050" class="btn-call">Զանգահարել հիմա</a>
     </section>
 
-    <!-- Slider Բացարձակ հուսալի տեխնիկական նկարներով -->
+    <!-- Slider -->
     <div class="slider-container">
-        <div class="slide"><img src="https://unsplash.com" alt="Համակարգիչների վերանորոգում"></div>
+        <div class="slide" style="display: block;"><img src="https://unsplash.com" alt="Համակարգիչների վերանորոգում"></div>
         <div class="slide"><img src="https://unsplash.com" alt="Տպիչների սպասարկում"></div>
-        <div class="slide"><img src="Используйте код с осторожностью.htmlhttps://unsplash.comИспользуйте код с осторожностью.html" alt="Հեռախոսների նորոգում"></div>
+        <div class="slide"><img src="https://unsplash.com" alt="Հեռախոսների նորոգում"></div>
         <button class="slider-btn prev" onclick="changeSlide(-1)">&#10094;</button>
         <button class="slider-btn next" onclick="changeSlide(1)">&#10095;</button>
     </div>
@@ -89,20 +89,31 @@ html<!DOCTYPE html>
 
     <script>
         let slideIndex = 0;
-        let slides = document.getElementsByClassName("slide");
-        if(slides.length > 0) {
-            slides[0].style.display = "block";
-            setTimeout(showSlides, 4000);
+        
+        function changeSlide(n) {
+            slideIndex += n;
+            displaySlides();
         }
-        function changeSlide(n) { slideIndex += n; displaySlides(); }
-        function showSlides() { slideIndex++; displaySlides(); setTimeout(showSlides, 4000); }
+
+        function autoSlides() {
+            slideIndex++;
+            displaySlides();
+            setTimeout(autoSlides, 4000);
+        }
+
         function displaySlides() {
-            let i; let slides = document.getElementsByClassName("slide");
+            let i;
+            let slides = document.getElementsByClassName("slide");
             if (slideIndex >= slides.length) { slideIndex = 0; }
             if (slideIndex < 0) { slideIndex = slides.length - 1; }
-            for (i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
-            if(slides[slideIndex]) { slides[slideIndex].style.display = "block"; }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex].style.display = "block";
         }
+        
+        // Միացնում ենք ավտոմատ փոխվելը 4 վայրկյանը մեկ
+        setTimeout(autoSlides, 4000);
     </script>
 </body>
 </html>
